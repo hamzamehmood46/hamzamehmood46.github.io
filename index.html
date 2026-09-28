@@ -71,9 +71,9 @@
     .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
     @media (prefers-color-scheme: dark) { .btn.primary { color: #0b1120; } }
 
-    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-top: 44px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: 14px; margin-top: 44px; }
     .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; box-shadow: var(--shadow); }
-    .stat b { display: block; font-size: 1.8rem; letter-spacing: -.02em; }
+    .stat b { display: block; font-size: 1.55rem; letter-spacing: -.02em; white-space: nowrap; }
     .stat span { color: var(--muted); font-size: .92rem; }
 
     section { padding: 56px 0; border-top: 1px solid var(--border); }
@@ -101,6 +101,12 @@
     .job ul { margin: 0; padding-left: 18px; }
     .job li { margin: 4px 0; }
     @media (max-width: 640px) { .job { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) {
+      header.site .wrap { height: auto; padding: 10px 20px; flex-wrap: wrap; gap: 2px 0; }
+      .brand { width: 100%; }
+      nav a { margin: 0 16px 0 0; }
+      .hero { padding-top: 48px; }
+    }
 
     .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
     .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
