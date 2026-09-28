@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hamza Mehmood | .NET Software Engineer</title>
+  <meta name="description" content="Hamza Mehmood is a .NET software engineer building production backend systems in C#, ASP.NET Core and Azure: event-driven services, SQL performance, and reliable APIs.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EHM%3C/text%3E%3C/svg%3E">
+  <meta property="og:title" content="Hamza Mehmood | .NET Software Engineer">
+  <meta property="og:description" content="Production backend systems in C#, ASP.NET Core and Azure.">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --shadow: 0 1px 2px rgba(15, 23, 42, .06), 0 4px 16px rgba(15, 23, 42, .05);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1120;
+        --surface: #111a2e;
+        --border: #23304a;
+        --text: #e5ecf6;
+        --muted: #9fb0c8;
+        --accent: #7aa7ff;
+        --accent-soft: #16294d;
+        --shadow: none;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+    header.site {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+    .brand { font-weight: 700; color: var(--text); letter-spacing: -.01em; }
+    nav a { margin-left: 18px; color: var(--muted); font-size: .95rem; }
+    nav a:hover { color: var(--text); text-decoration: none; }
+
+    .hero { padding: 84px 0 56px; }
+    .eyebrow { color: var(--accent); font-weight: 600; font-size: .9rem; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); line-height: 1.1; margin: 10px 0 16px; letter-spacing: -.03em; }
+    .lead { font-size: 1.2rem; color: var(--muted); max-width: 46rem; margin: 0 0 28px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-block; padding: 11px 20px; border-radius: 10px; font-weight: 600;
+      border: 1px solid var(--border); color: var(--text); background: var(--surface);
+    }
+    .btn:hover { text-decoration: none; border-color: var(--accent); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    @media (prefers-color-scheme: dark) { .btn.primary { color: #0b1120; } }
+
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-top: 44px; }
+    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; box-shadow: var(--shadow); }
+    .stat b { display: block; font-size: 1.8rem; letter-spacing: -.02em; }
+    .stat span { color: var(--muted); font-size: .92rem; }
+
+    section { padding: 56px 0; border-top: 1px solid var(--border); }
+    h2 { font-size: 1.75rem; letter-spacing: -.02em; margin: 0 0 8px; }
+    .section-intro { color: var(--muted); margin: 0 0 28px; max-width: 44rem; }
+
+    .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
+    .card {
+      display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px; box-shadow: var(--shadow); color: var(--text);
+    }
+    .card:hover { border-color: var(--accent); text-decoration: none; }
+    .card h3 { margin: 0 0 6px; font-size: 1.1rem; letter-spacing: -.01em; }
+    .card p { margin: 0 0 14px; color: var(--muted); font-size: .95rem; flex: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+    .tags li { background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 2px 10px; font-size: .78rem; font-weight: 600; }
+    .proof { font-size: .85rem; color: var(--muted); margin: 12px 0 0; }
+
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .job { display: grid; grid-template-columns: 170px 1fr; gap: 8px 28px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+    .job:last-child { border-bottom: 0; }
+    .job .when { color: var(--muted); font-size: .92rem; }
+    .job h3 { margin: 0; font-size: 1.1rem; }
+    .job .org { color: var(--muted); margin: 0 0 8px; }
+    .job ul { margin: 0; padding-left: 18px; }
+    .job li { margin: 4px 0; }
+    @media (max-width: 640px) { .job { grid-template-columns: 1fr; } }
+
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+    .skill-group h3 { margin: 0 0 10px; font-size: .95rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+    .edu p { margin: 4px 0; }
+    .contact { text-align: center; }
+    .contact .cta { justify-content: center; }
+    footer { padding: 28px 0 48px; color: var(--muted); font-size: .9rem; text-align: center; border-top: 1px solid var(--border); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="#top">Hamza Mehmood</a>
+      <nav aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+      <div class="hero">
+        <div class="eyebrow">.NET Software Engineer</div>
+        <h1>I build backend systems that stay up when things go wrong.</h1>
+        <p class="lead">
+          Four years of C#, ASP.NET Core and Azure across enterprise fintech, healthcare billing and partner
+          integrations: event-driven services, fast SQL, and APIs that fail safely. M.S. in Computer Science,
+          Texas Tech University.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See my projects</a>
+          <a class="btn" href="https://github.com/hamzamehmood46">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/hamza-mehmood-a4b8ba161">LinkedIn</a>
+        </div>
+
+        <div class="stats" aria-label="Highlights">
+          <div class="stat"><b>180s &rarr; 32s</b><span>enterprise report, via query and index redesign</span></div>
+          <div class="stat"><b>&minus;91%</b><span>production defects across a three-client platform</span></div>
+          <div class="stat"><b>80+</b><span>REST endpoints for a US medical-billing platform</span></div>
+          <div class="stat"><b>4</b><span>downstream systems integrated on Azure</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <p class="section-intro">
+          Public reference implementations of patterns I use in production. Each has a README, automated tests
+          and CI. None contains code from any employer.
+        </p>
+        <div class="projects">
+          <a class="card" href="https://github.com/hamzamehmood46/orderflow-dotnet">
+            <h3>OrderFlow</h3>
+            <p>Event-driven order processing with idempotent APIs, exponential-backoff retries and dead-letter handling.</p>
+            <ul class="tags"><li>ASP.NET Core</li><li>EF Core</li><li>Messaging</li></ul>
+            <div class="proof">16 tests, including concurrent duplicate requests</div>
+          </a>
+          <a class="card" href="https://github.com/hamzamehmood46/outbox-pattern-dotnet">
+            <h3>Transactional Outbox</h3>
+            <p>Update the database and publish an event without ever doing one but not the other, plus an idempotent inbox.</p>
+            <ul class="tags"><li>EF Core</li><li>Reliability</li><li>Concurrency</li></ul>
+            <div class="proof">12 tests: crash recovery, competing dispatchers</div>
+          </a>
+          <a class="card" href="https://github.com/hamzamehmood46/claims-api-dotnet">
+            <h3>Claims API</h3>
+            <p>Medical-billing REST API on Clean Architecture with JWT auth, role-based workflow and a strict claim state machine.</p>
+            <ul class="tags"><li>Clean Architecture</li><li>JWT</li><li>Swagger</li></ul>
+            <div class="proof">20 tests across domain rules and roles</div>
+          </a>
+          <a class="card" href="https://github.com/hamzamehmood46/event-sourced-ledger-dotnet">
+            <h3>Event-Sourced Ledger</h3>
+            <p>A bank ledger where every change is an immutable event, with optimistic concurrency and a rebuildable CQRS read model.</p>
+            <ul class="tags"><li>Event sourcing</li><li>CQRS</li><li>ADO.NET</li></ul>
+            <div class="proof">Parallel withdrawals can never overdraw</div>
+          </a>
+          <a class="card" href="https://github.com/hamzamehmood46/sql-performance-lab-dotnet">
+            <h3>SQL Performance Lab</h3>
+            <p>Before-and-after query tuning on 200k rows, verified by identical results and by reading the query plan.</p>
+            <ul class="tags"><li>SQL</li><li>Indexing</li><li>Query plans</li></ul>
+            <div class="proof">Includes a case where the clever rewrite was slower</div>
+          </a>
+          <a class="card" href="https://github.com/hamzamehmood46/xml-mapping-service-dotnet">
+            <h3>XML Mapping Service</h3>
+            <p>Validate partner XML against an XSD, transform with sandboxed XSLT, and validate the output, with XXE protection.</p>
+            <ul class="tags"><li>XSD</li><li>XSLT</li><li>Security</li></ul>
+            <div class="proof">Blocks external-entity attacks; catches broken mappings</div>
+          </a>
+          <a class="card" href="https://github.com/hamzamehmood46/resilience-toolkit-dotnet">
+            <h3>Resilience Toolkit</h3>
+            <p>Retry with jittered backoff, circuit breaker, timeout and bulkhead, composable into one pipeline.</p>
+            <ul class="tags"><li>Polly-style</li><li>Circuit breaker</li><li>Retry</li></ul>
+            <div class="proof">23 tests on a fake clock, no sleeping</div>
+          </a>
+          <a class="card" href="https://github.com/hamzamehmood46/api-rate-limiter-dotnet">
+            <h3>API Rate Limiter</h3>
+            <p>Token-bucket and sliding-window limiters with ASP.NET Core middleware and standard RateLimit headers.</p>
+            <ul class="tags"><li>Middleware</li><li>Thread safety</li><li>HTTP</li></ul>
+            <div class="proof">1,000 concurrent callers never exceed the limit</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <h2>Experience</h2>
+        <ol class="timeline">
+          <li class="job">
+            <div class="when">Aug 2026 &ndash; Present</div>
+            <div>
+              <h3>Volunteer Research Assistant</h3>
+              <p class="org">Texas Tech University, Computer Science</p>
+              <ul>
+                <li>Research on lecture and feedback evaluation, comparing single-prompt and multi-agent approaches.</li>
+                <li>Built LLM-as-a-judge evaluation methods and reproducible experiment pipelines in Python.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <div class="when">Feb 2026 &ndash; Aug 2026</div>
+            <div>
+              <h3>Graduate Assistant, Business Technology Support</h3>
+              <p class="org">Texas Tech University Online</p>
+              <ul>
+                <li>Shipped a production chatbot on a vector database: responses under 3 seconds, API cost down 30%.</li>
+                <li>Built a Python migration pipeline across 40 school districts, cutting manual effort by 60%.</li>
+                <li>Built automation agents for messaging and content monitoring.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <div class="when">May 2024 &ndash; Jul 2025</div>
+            <div>
+              <h3>.NET Developer</h3>
+              <p class="org">Systems Limited (PartnerLinQ), Lahore</p>
+              <ul>
+                <li>Primary production responder for a platform integrating four downstream systems; recurring failures down 30%.</li>
+                <li>Designed event-driven services on Azure Functions, Logic Apps, API Management and Service Bus with retry, idempotency and dead-letter handling.</li>
+                <li>Managed environments with Terraform, Docker and Azure DevOps; implemented OAuth 2.0 and Key Vault secrets.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <div class="when">Jun 2022 &ndash; Apr 2024</div>
+            <div>
+              <h3>Software Engineer</h3>
+              <p class="org">NETSOL Technologies, Lahore</p>
+              <ul>
+                <li>Delivered 10+ modules on an enterprise lease and finance platform serving three clients.</li>
+                <li>Cut a reporting module from 180s to 32s by redesigning stored procedures and adding indexed views.</li>
+                <li>Led code reviews and mentoring; production defects fell 91% with sprint delivery held at 94%.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <div class="when">Oct 2021 &ndash; Apr 2022</div>
+            <div>
+              <h3>.NET Core Developer</h3>
+              <p class="org">Hawk Logix, Lahore</p>
+              <ul>
+                <li>Built 80+ REST endpoints in Clean Architecture for a US medical-billing platform processing about 30K records a month, documented in Swagger/OpenAPI.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <h2>Skills</h2>
+        <div class="skills">
+          <div class="skill-group"><h3>Backend</h3><ul class="tags"><li>C#</li><li>.NET 8</li><li>ASP.NET Core</li><li>Web API</li><li>EF Core</li><li>ADO.NET</li><li>Microservices</li><li>WCF</li></ul></div>
+          <div class="skill-group"><h3>Cloud &amp; DevOps</h3><ul class="tags"><li>Azure Functions</li><li>Service Bus</li><li>API Management</li><li>Key Vault</li><li>Docker</li><li>Terraform</li><li>Azure DevOps</li><li>GitHub Actions</li></ul></div>
+          <div class="skill-group"><h3>Data</h3><ul class="tags"><li>SQL Server</li><li>PostgreSQL</li><li>Oracle PL/SQL</li><li>Cosmos DB</li><li>Query tuning</li></ul></div>
+          <div class="skill-group"><h3>Frontend &amp; Other</h3><ul class="tags"><li>Angular</li><li>TypeScript</li><li>WPF / MVVM</li><li>Python</li><li>xUnit</li><li>LLM integration</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap edu">
+        <h2>Education</h2>
+        <p><strong>M.S., Computer &amp; Information Sciences</strong>, Texas Tech University (August 2026)</p>
+        <p><strong>B.Sc., Software Engineering</strong>, National Textile University</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Let&rsquo;s talk</h2>
+        <p class="section-intro" style="margin-inline:auto">
+          I&rsquo;m looking for .NET and backend engineering roles in the DMV area or remote across the US.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:hamza.mehmood46@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/hamza-mehmood-a4b8ba161">LinkedIn</a>
+          <a class="btn" href="https://github.com/hamzamehmood46">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">&copy; 2026 Hamza Mehmood</div></footer>
+</body>
+</html>
