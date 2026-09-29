@@ -1,324 +1,484 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hamza Mehmood | .NET Software Engineer</title>
-  <meta name="description" content="Hamza Mehmood is a .NET software engineer building production backend systems in C#, ASP.NET Core and Azure: event-driven services, SQL performance, and reliable APIs.">
-  <meta name="theme-color" content="#0f172a">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EHM%3C/text%3E%3C/svg%3E">
-  <meta property="og:title" content="Hamza Mehmood | .NET Software Engineer">
-  <meta property="og:description" content="Production backend systems in C#, ASP.NET Core and Azure.">
-  <meta property="og:type" content="website">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --surface: #f8fafc;
-      --border: #e2e8f0;
-      --text: #0f172a;
-      --muted: #475569;
-      --accent: #2563eb;
-      --accent-soft: #dbeafe;
-      --shadow: 0 1px 2px rgba(15, 23, 42, .06), 0 4px 16px rgba(15, 23, 42, .05);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1120;
-        --surface: #111a2e;
-        --border: #23304a;
-        --text: #e5ecf6;
-        --muted: #9fb0c8;
-        --accent: #7aa7ff;
-        --accent-soft: #16294d;
-        --shadow: none;
-      }
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamza Mehmood | .NET Software Engineer</title>
+<meta name="description" content="Hamza Mehmood is a .NET software engineer who builds backends that keep working when things go wrong: event-driven services, fast SQL, and well-tested APIs in C#, ASP.NET Core and Azure.">
+<meta name="theme-color" content="#f3efe6">
+<meta property="og:title" content="Hamza Mehmood | .NET Software Engineer">
+<meta property="og:description" content="Software that keeps working when things go wrong. C#, ASP.NET Core, Azure.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316161d'/%3E%3Cpath d='M18 46V18h6v11h16V18h6v28h-6V35H24v11z' fill='%23e6f26b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3efe6; --paper-2:#eae5d8; --ink:#16161d; --ink-2:#3b3b46; --muted:#6c6b73;
+  --line:rgba(22,22,29,.14); --violet:#5b3df5; --lime:#e6f26b;
+  --ok:#1f9d63; --warn:#d99a1e; --bad:#e2483d; --card-ink:#16161d; --card-ink-text:#f3efe6;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#111116; --paper-2:#1a1a21; --ink:#f1ede3; --ink-2:#c9c6bd; --muted:#8f8d97;
+    --line:rgba(241,237,227,.16); --card-ink:#1e1e27; --card-ink-text:#f1ede3;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 0%,#000 0%,transparent 65%);-webkit-mask-image:radial-gradient(ellipse at 70% 0%,#000 0%,transparent 65%)}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+.serif{font-family:var(--serif);font-weight:400}
+em.hl{font-style:italic;background:linear-gradient(transparent 62%,var(--lime) 62%,var(--lime) 92%,transparent 92%);padding:0 .06em}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) em.hl{background:linear-gradient(transparent 62%,rgba(230,242,107,.35) 62%,rgba(230,242,107,.35) 92%,transparent 92%)}}
 
-    header.site {
-      position: sticky; top: 0; z-index: 10;
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-    header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
-    .brand { font-weight: 700; color: var(--text); letter-spacing: -.01em; }
-    nav a { margin-left: 18px; color: var(--muted); font-size: .95rem; }
-    nav a:hover { color: var(--text); text-decoration: none; }
+/* nav */
+header{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:color-mix(in srgb,var(--paper) 82%,transparent);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-family:var(--serif);font-size:1.6rem;text-decoration:none;letter-spacing:-.01em}
+.brand i{color:var(--violet);font-style:normal}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:.95rem}
+nav ul a{text-decoration:none;color:var(--ink-2)}
+nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.72rem 1.15rem;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;font-family:inherit;transition:transform .15s,background .15s,color .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.lime{background:var(--lime);color:#16161d;border-color:#16161d}
+.btn:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+@media (max-width:760px){nav ul{display:none}}
 
-    .hero { padding: 84px 0 56px; }
-    .eyebrow { color: var(--accent); font-weight: 600; font-size: .9rem; letter-spacing: .06em; text-transform: uppercase; }
-    h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); line-height: 1.1; margin: 10px 0 16px; letter-spacing: -.03em; }
-    .lead { font-size: 1.2rem; color: var(--muted); max-width: 46rem; margin: 0 0 28px; }
-    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn {
-      display: inline-block; padding: 11px 20px; border-radius: 10px; font-weight: 600;
-      border: 1px solid var(--border); color: var(--text); background: var(--surface);
-    }
-    .btn:hover { text-decoration: none; border-color: var(--accent); }
-    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-    @media (prefers-color-scheme: dark) { .btn.primary { color: #0b1120; } }
+/* hero */
+.wrap.hero{padding-top:88px;padding-bottom:56px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:28px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:.35rem .8rem;font-size:.85rem;color:var(--ink-2);background:color-mix(in srgb,var(--paper) 70%,transparent)}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(31,157,99,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(31,157,99,0)}100%{box-shadow:0 0 0 0 rgba(31,157,99,0)}}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,8.6vw,7.4rem);line-height:.96;letter-spacing:-.025em;margin:0 0 30px;max-width:14ch}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
+.lede{font-size:1.2rem;color:var(--ink-2);max-width:46ch;margin:0 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.idcard{border:1px solid var(--line);border-radius:18px;padding:20px;background:color-mix(in srgb,var(--paper-2) 60%,transparent)}
+.idcard b{display:block;font-size:1.05rem}
+.idcard span{color:var(--muted);font-size:.92rem}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.stack span{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);border-radius:6px;padding:.2rem .5rem;color:var(--ink-2)}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:28px}.wrap.hero{padding-top:56px}}
 
-    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: 14px; margin-top: 44px; }
-    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; box-shadow: var(--shadow); }
-    .stat b { display: block; font-size: 1.55rem; letter-spacing: -.02em; white-space: nowrap; }
-    .stat span { color: var(--muted); font-size: .92rem; }
+/* sections */
+section.wrap{padding-top:72px;padding-bottom:72px}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:36px}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5vw,4rem);line-height:1;letter-spacing:-.02em;margin:10px 0 0}
+.sec-head p{margin:0;color:var(--ink-2);max-width:48ch}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr;gap:14px}}
+hr.rule{border:0;border-top:1px solid var(--line);margin:0}
 
-    section { padding: 56px 0; border-top: 1px solid var(--border); }
-    h2 { font-size: 1.75rem; letter-spacing: -.02em; margin: 0 0 8px; }
-    .section-intro { color: var(--muted); margin: 0 0 28px; max-width: 44rem; }
+/* playground */
+.lab{background:var(--card-ink);color:var(--card-ink-text);border-radius:28px;padding:28px;position:relative;overflow:hidden}
+.lab .mono{color:rgba(243,239,230,.6)}
+.lab-top{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;margin-bottom:22px}
+.state{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.85rem;border-radius:999px;padding:.4rem .9rem;background:rgba(255,255,255,.08)}
+.state i{width:10px;height:10px;border-radius:50%;background:var(--ok)}
+.state[data-s="open"] i{background:var(--bad)}
+.state[data-s="half"] i{background:var(--warn)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.controls .btn{border-color:rgba(243,239,230,.4);color:#f3efe6;padding:.6rem 1rem;font-size:.88rem}
+.controls .btn.lime{background:var(--lime);color:#16161d;border-color:var(--lime)}
+.slider{display:flex;align-items:center;gap:10px;font-size:.85rem;color:rgba(243,239,230,.8)}
+.slider input{accent-color:var(--lime);width:150px}
+.slider output{font-family:var(--mono);min-width:3.2ch;text-align:right}
+.lane{position:relative;height:150px;margin:8px 0 20px}
+.lane::before{content:"";position:absolute;left:8%;right:8%;top:50%;border-top:1.5px dashed rgba(243,239,230,.25)}
+.node{position:absolute;top:50%;transform:translateY(-50%);width:23%;max-width:190px;min-height:78px;border:1.5px solid rgba(243,239,230,.35);border-radius:16px;padding:12px 14px;background:#1e1e27;text-align:left;z-index:2}
+.node b{display:block;font-size:.95rem}.node small{color:rgba(243,239,230,.6);font-size:.78rem;line-height:1.3;display:block;margin-top:2px}
+.node.n1{left:0}.node.n2{left:38.5%}.node.n3{right:0}
+.node.n2{border-color:var(--ok);transition:border-color .3s,box-shadow .3s}
+.lab[data-s="open"] .node.n2{border-color:var(--bad);box-shadow:0 0 0 6px rgba(226,72,61,.15)}
+.lab[data-s="half"] .node.n2{border-color:var(--warn);box-shadow:0 0 0 6px rgba(217,154,30,.15)}
+.node.n3{transition:opacity .3s}
+.node.n3.sick{border-color:var(--bad)}
+.pkt{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--lime);z-index:3;left:14%;transition:left .38s ease,top .38s ease,background .2s,opacity .5s,transform .3s;top:50%}
+.pkt.ok{background:var(--ok)}.pkt.bad{background:var(--bad)}.pkt.shed{background:var(--warn)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.stat{border:1px solid rgba(243,239,230,.18);border-radius:14px;padding:12px 14px}
+.stat b{font-family:var(--serif);font-weight:400;font-size:2rem;line-height:1;display:block}
+.stat span{font-size:.78rem;color:rgba(243,239,230,.65)}
+.log{font-family:var(--mono);font-size:.78rem;line-height:1.6;margin:0;padding:14px 16px;list-style:none;border-radius:14px;background:rgba(0,0,0,.28);min-height:150px;color:rgba(243,239,230,.85)}
+.log li{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.log .g{color:#7fe0ae}.log .r{color:#ff8f86}.log .y{color:#f4c65c}.log .d{color:rgba(243,239,230,.5)}
+.lab-note{font-size:.9rem;color:rgba(243,239,230,.7);margin:16px 0 0}
+.lab-note a{color:var(--lime)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.node{width:27%;padding:10px}.node small{display:none}.node.n2{left:36.5%}.lane{height:120px}}
 
-    .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
-    .card {
-      display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border);
-      border-radius: 14px; padding: 20px; box-shadow: var(--shadow); color: var(--text);
-    }
-    .card:hover { border-color: var(--accent); text-decoration: none; }
-    .card h3 { margin: 0 0 6px; font-size: 1.1rem; letter-spacing: -.01em; }
-    .card p { margin: 0 0 14px; color: var(--muted); font-size: .95rem; flex: 1; }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
-    .tags li { background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 2px 10px; font-size: .78rem; font-weight: 600; }
-    .proof { font-size: .85rem; color: var(--muted); margin: 12px 0 0; }
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-block:1px solid var(--line)}
+.num{padding:34px 24px 34px 0}
+.num+.num{padding-left:24px;border-left:1px solid var(--line)}
+.num b{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,5vw,4.4rem);line-height:1;display:block;letter-spacing:-.02em}
+.num span{color:var(--ink-2);font-size:.95rem}
+@media (max-width:860px){.nums{grid-template-columns:1fr 1fr}.num:nth-child(3){border-left:0;padding-left:0}.num:nth-child(n+3){border-top:1px solid var(--line)}}
 
-    .timeline { list-style: none; margin: 0; padding: 0; }
-    .job { display: grid; grid-template-columns: 170px 1fr; gap: 8px 28px; padding: 22px 0; border-bottom: 1px solid var(--border); }
-    .job:last-child { border-bottom: 0; }
-    .job .when { color: var(--muted); font-size: .92rem; }
-    .job h3 { margin: 0; font-size: 1.1rem; }
-    .job .org { color: var(--muted); margin: 0 0 8px; }
-    .job ul { margin: 0; padding-left: 18px; }
-    .job li { margin: 4px 0; }
-    @media (max-width: 640px) { .job { grid-template-columns: 1fr; } }
-    @media (max-width: 560px) {
-      header.site .wrap { height: auto; padding: 10px 20px; flex-wrap: wrap; gap: 2px 0; }
-      .brand { width: 100%; }
-      nav a { margin: 0 16px 0 0; }
-      .hero { padding-top: 48px; }
-    }
+/* work cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border-radius:24px;padding:26px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
+.card.ink{background:var(--card-ink);color:var(--card-ink-text)}
+.card.violet{background:var(--violet);color:#fff}
+.card.lime{background:var(--lime);color:#16161d}
+.card .tag{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.03em;opacity:.75}
+.card h3{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,3.4vw,3rem);line-height:1;margin:14px 0;letter-spacing:-.02em}
+.card .foot{font-family:var(--mono);font-size:.76rem;opacity:.8}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.case h4{margin:0 0 4px;font-size:1.15rem}
+.case .role{color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.case p{margin:0 0 12px;color:var(--ink-2);font-size:.98rem}
+details{border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details .inside{padding-top:12px;font-size:.95rem;color:var(--ink-2)}
+details .inside dt{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;color:var(--muted);margin-top:10px}
+details .inside dd{margin:2px 0 0}
+@media (max-width:980px){.cards,.cases{grid-template-columns:1fr}.card{min-height:220px}}
 
-    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-    .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
-    .skill-group h3 { margin: 0 0 10px; font-size: .95rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+/* proof */
+.proof{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1.1fr 2fr .55fr auto;gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:background .15s,padding .15s}
+.row:hover{background:color-mix(in srgb,var(--lime) 30%,transparent);padding-left:12px;padding-right:12px}
+.row b{font-family:var(--serif);font-weight:400;font-size:1.55rem;line-height:1.1}
+.row span{color:var(--ink-2);font-size:.96rem}
+.row .n{font-family:var(--mono);font-size:.8rem;color:var(--muted);white-space:nowrap}
+.row .go{font-size:1.2rem}
+.row em{font-style:normal}
+@media (max-width:760px){.row{grid-template-columns:1fr auto;gap:6px}.row span{grid-column:1/-1;order:3}.row .n{order:2}}
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.app{border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;background:color-mix(in srgb,var(--paper-2) 50%,transparent);transition:transform .2s,box-shadow .2s;display:block}
+.app:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(22,22,29,.35)}
+.app img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;background:var(--paper-2);border-bottom:1px solid var(--line)}
+.app div{padding:16px 18px 18px}
+.app b{display:block;font-size:1.05rem}
+.app span{color:var(--ink-2);font-size:.92rem}
+@media (max-width:860px){.apps{grid-template-columns:1fr}}
 
-    .edu p { margin: 4px 0; }
-    .contact { text-align: center; }
-    .contact .cta { justify-content: center; }
-    footer { padding: 28px 0 48px; color: var(--muted); font-size: .9rem; text-align: center; border-top: 1px solid var(--border); }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  </style>
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.note{border:1px solid var(--line);border-radius:20px;padding:24px;background:color-mix(in srgb,var(--paper-2) 45%,transparent)}
+.note .mono{display:block;margin-bottom:10px}
+.note h4{font-family:var(--serif);font-weight:400;font-size:1.7rem;line-height:1.1;margin:0 0 10px;letter-spacing:-.01em}
+.note p{margin:0;color:var(--ink-2);font-size:.98rem}
+.note code{font-family:var(--mono);font-size:.86em;background:var(--paper-2);border-radius:5px;padding:.1rem .35rem}
+@media (max-width:760px){.notes{grid-template-columns:1fr}}
+
+/* path */
+.path{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.path li{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.path .when{font-family:var(--mono);font-size:.8rem;color:var(--muted);padding-top:.35rem}
+.path b{font-size:1.15rem;display:block}
+.path span{color:var(--ink-2);font-size:.96rem}
+@media (max-width:640px){.path li{grid-template-columns:1fr;gap:4px}}
+
+/* contact */
+.contact{background:var(--card-ink);color:var(--card-ink-text);border-radius:32px;padding:clamp(28px,6vw,72px);text-align:left}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,7vw,6rem);line-height:.98;letter-spacing:-.025em;margin:12px 0 26px;max-width:14ch}
+.contact .mono{color:rgba(243,239,230,.6)}
+.contact em.hl,.lab em.hl{background:none!important;color:var(--lime)}
+.contact .btn{border-color:rgba(243,239,230,.5);color:#f3efe6}
+.contact .btn.lime{background:var(--lime);color:#16161d;border-color:var(--lime)}
+footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* motion */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}
+  .chip .dot{animation:none}.pkt{transition:none}.btn,.app,.row{transition:none}
+}
+</style>
 </head>
 <body>
-  <header class="site">
-    <div class="wrap">
-      <a class="brand" href="#top">Hamza Mehmood</a>
-      <nav aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="#top">Hamza<i>.</i></a>
+      <ul>
+        <li><a href="#lab">Playground</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#proof">Proof</a></li>
+        <li><a href="#notes">Field notes</a></li>
+        <li><a href="#path">Path</a></li>
+      </ul>
+      <a class="btn primary" href="assets/Hamza_Mehmood_Resume.pdf" download>Résumé ↓</a>
+    </nav>
+  </div>
+</header>
 
-  <main id="top">
-    <div class="wrap">
-      <div class="hero">
-        <div class="eyebrow">.NET Software Engineer</div>
-        <h1>I build backend systems that stay up when things go wrong.</h1>
-        <p class="lead">
-          Four years of C#, ASP.NET Core and Azure across enterprise fintech, healthcare billing and partner
-          integrations: event-driven services, fast SQL, and APIs that fail safely. M.S. in Computer Science,
-          Texas Tech University.
-        </p>
+<main id="top">
+  <div class="wrap hero">
+    <div class="meta">
+      <span class="mono">Hamza Mehmood / .NET software engineer</span>
+      <span class="chip"><span class="dot"></span>Open to .NET &amp; backend roles · Vienna, VA or remote</span>
+    </div>
+    <h1>Software that keeps working <em class="hl">when things go wrong.</em></h1>
+    <div class="hero-grid">
+      <div>
+        <p class="lede">I build .NET backends: event-driven services, fast SQL, and APIs that are tested until they're boring. Four years across enterprise fintech, healthcare billing and Azure integration platforms.</p>
         <div class="cta">
-          <a class="btn primary" href="#projects">See my projects</a>
+          <a class="btn lime" href="#lab">Try to break something ↓</a>
           <a class="btn" href="https://github.com/hamzamehmood46">GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/hamzamehmood46">LinkedIn</a>
         </div>
+      </div>
+      <aside class="idcard" aria-label="Snapshot">
+        <b>M.S. Computer Science</b>
+        <span>Texas Tech University · 2026</span>
+        <div class="stack" aria-label="Main technologies"><span>C#</span><span>ASP.NET Core</span><span>EF Core</span><span>Azure</span><span>SQL Server</span><span>Angular</span></div>
+      </aside>
+    </div>
+  </div>
 
-        <div class="stats" aria-label="Highlights">
-          <div class="stat"><b>180s &rarr; 32s</b><span>enterprise report, via query and index redesign</span></div>
-          <div class="stat"><b>&minus;91%</b><span>production defects across a three-client platform</span></div>
-          <div class="stat"><b>80+</b><span>REST endpoints for a US medical-billing platform</span></div>
-          <div class="stat"><b>4</b><span>downstream systems integrated on Azure</span></div>
+  <hr class="rule">
+
+  <section id="lab" class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="mono">Playground</span><h2>Try to <em class="hl">break</em> it.</h2></div>
+      <p>A live model of the retry and circuit-breaker pattern from my Resilience Toolkit. Make the dependency unreliable, send traffic, and watch the breaker stop the pile-up, then heal itself.</p>
+    </div>
+    <div class="lab reveal" id="labbox" data-s="closed">
+      <div class="lab-top">
+        <span class="state" id="state" data-s="closed" role="status" aria-live="polite"><i></i><span id="stateText">Breaker closed · healthy</span></span>
+        <div class="controls">
+          <label class="slider">Dependency failure rate <input id="rate" type="range" min="0" max="100" value="20" aria-label="Dependency failure rate"><output id="rateOut">20%</output></label>
+          <button class="btn lime" id="send" type="button">Send 10 requests</button>
+          <button class="btn" id="down" type="button">Take it down</button>
+          <button class="btn" id="heal" type="button">Heal it</button>
         </div>
+      </div>
+      <div class="lane" id="lane" aria-hidden="true">
+        <div class="node n1"><b>Your API</b><small>10 requests per burst</small></div>
+        <div class="node n2"><b>Retry + breaker</b><small>3 tries, backoff with jitter. Opens after 4 failures in a row.</small></div>
+        <div class="node n3" id="dep"><b>Dependency</b><small>Payment provider, partner API, database</small></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="sOk">0</b><span>Served</span></div>
+        <div class="stat"><b id="sRetry">0</b><span>Retried</span></div>
+        <div class="stat"><b id="sShed">0</b><span>Shed instantly (no wasted call)</span></div>
+        <div class="stat"><b id="sFail">0</b><span>Gave up</span></div>
+      </div>
+      <ul class="log" id="log" role="log" aria-live="off"><li class="d">Press “Take it down”, then “Send 10 requests”.</li></ul>
+      <p class="lab-note">Simulation only, but the logic mirrors the tested implementation in <a href="https://github.com/hamzamehmood46/resilience-toolkit-dotnet">resilience-toolkit-dotnet</a> (retry with jitter, circuit breaker, timeout, bulkhead).</p>
+    </div>
+  </section>
+
+  <div class="wrap reveal">
+    <div class="nums">
+      <div class="num"><b>180s → 32s</b><span>A reporting module, after profiling execution plans</span></div>
+      <div class="num"><b>91%</b><span>Fewer production defects on a three-client platform</span></div>
+      <div class="num"><b>30–40</b><span>Production incidents a month I owned across four systems</span></div>
+      <div class="num"><b>130+</b><span>Automated tests across 8 reference projects, all in CI</span></div>
+    </div>
+  </div>
+
+  <section id="work" class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="mono">The work</span><h2>The parts that <em class="hl">can't fail.</em></h2></div>
+      <p>Integrations, reporting and payments-style workflows: the systems where a slow query or a lost message costs real money. Here's how I approach them.</p>
+    </div>
+    <div class="cards reveal">
+      <div class="card ink"><div><span class="tag">Production integrations</span><h3>Four systems, one platform.</h3></div><span class="foot">Azure · Service Bus · retries · dead-letter</span></div>
+      <div class="card violet"><div><span class="tag">Performance</span><h3>180 seconds down to 32.</h3></div><span class="foot">Execution plans · indexed views · stored procedures</span></div>
+      <div class="card lime"><div><span class="tag">Correctness</span><h3>Proven under contention.</h3></div><span class="foot">Idempotency · outbox · optimistic concurrency</span></div>
+    </div>
+    <div class="cases reveal">
+      <article class="case">
+        <h4>Consultant .NET, Systems Limited</h4>
+        <div class="role">PartnerLinQ platform · May 2024 – Jul 2025</div>
+        <p>Primary production responder for a platform integrating four downstream systems.</p>
+        <details><summary>Inside the work</summary>
+          <dl class="inside">
+            <dt>Problem</dt><dd>Partner systems failed in different ways, and recurring incidents ate the team's week.</dd>
+            <dt>What I did</dt><dd>Built event-driven services on Azure Functions, Logic Apps, API Management and Service Bus with retry, idempotency and dead-letter handling. Added logging and telemetry, and traced each incident to root cause instead of patching symptoms. Managed environments with Terraform and shipped through Azure DevOps.</dd>
+            <dt>Result</dt><dd>30–40 incidents a month handled at 70% SLA compliance, and 30% fewer recurring failures.</dd>
+          </dl>
+        </details>
+      </article>
+      <article class="case">
+        <h4>Software Engineer, NETSOL</h4>
+        <div class="role">Lease &amp; finance platform · Jun 2022 – Apr 2024</div>
+        <p>Owned 10+ modules end to end for an enterprise platform serving three clients.</p>
+        <details><summary>Inside the work</summary>
+          <dl class="inside">
+            <dt>Problem</dt><dd>A core reporting module took 180 seconds, so operations teams worked around it.</dd>
+            <dt>What I did</dt><dd>Profiled the execution plans, removed table scans across two large joins, and redesigned the stored procedures with indexed views. Led code reviews and mentored junior developers.</dd>
+            <dt>Result</dt><dd>180 s to 32 s, production defects down 91%, and sprint delivery steady at 94%.</dd>
+          </dl>
+        </details>
+      </article>
+      <article class="case">
+        <h4>Reference implementations</h4>
+        <div class="role">Public, tested, verified in CI</div>
+        <p>The patterns I use at work, rebuilt in the open with tests that try to break them.</p>
+        <details><summary>Inside the work</summary>
+          <dl class="inside">
+            <dt>Idempotency</dt><dd>Eight concurrent duplicate requests create exactly one order.</dd>
+            <dt>Concurrency</dt><dd>Ten parallel withdrawals against a balance that covers five: exactly five succeed, and the balance never goes negative.</dd>
+            <dt>Delivery</dt><dd>A transactional outbox with competing dispatchers and an idempotent inbox, so events survive a crash and never run twice.</dd>
+          </dl>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <section id="proof" class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="mono">Proof, in code</span><h2>Read the <em class="hl">source.</em></h2></div>
+      <p>Every project has a README, automated tests and CI. None contains employer code.</p>
+    </div>
+    <div class="proof reveal">
+      <a class="row" href="https://github.com/hamzamehmood46/orderflow-dotnet"><b>OrderFlow</b><span>Idempotent order API with retries, backoff and dead-letter handling.</span><em class="n">17 tests</em><em class="go">↗</em></a>
+      <a class="row" href="https://github.com/hamzamehmood46/outbox-pattern-dotnet"><b>Transactional Outbox</b><span>Reliable event publishing with competing dispatchers and an idempotent inbox.</span><em class="n">12 tests</em><em class="go">↗</em></a>
+      <a class="row" href="https://github.com/hamzamehmood46/event-sourced-ledger-dotnet"><b>Event-Sourced Ledger</b><span>CQRS and optimistic concurrency: parallel withdrawals can never overdraw.</span><em class="n">20 tests</em><em class="go">↗</em></a>
+      <a class="row" href="https://github.com/hamzamehmood46/claims-api-dotnet"><b>Claims API</b><span>Clean Architecture, JWT and a role-based claim workflow enforced in the domain.</span><em class="n">22 tests</em><em class="go">↗</em></a>
+      <a class="row" href="https://github.com/hamzamehmood46/resilience-toolkit-dotnet"><b>Resilience Toolkit</b><span>Retry with jitter, circuit breaker, timeout and bulkhead. Powers the playground above.</span><em class="n">23 tests</em><em class="go">↗</em></a>
+      <a class="row" href="https://github.com/hamzamehmood46/api-rate-limiter-dotnet"><b>API Rate Limiter</b><span>Token bucket and sliding window as ASP.NET Core middleware; 1,000 concurrent callers never exceed the limit.</span><em class="n">25 tests</em><em class="go">↗</em></a>
+      <a class="row" href="https://github.com/hamzamehmood46/xml-mapping-service-dotnet"><b>XML Mapping Service</b><span>XSD validation and sandboxed XSLT with XXE protection.</span><em class="n">11 tests</em><em class="go">↗</em></a>
+      <a class="row" href="https://github.com/hamzamehmood46/sql-performance-lab-dotnet"><b>SQL Performance Lab</b><span>Query tuning proven by identical results and query plans.</span><em class="n">6 tests</em><em class="go">↗</em></a>
+    </div>
+    <div class="apps reveal">
+      <a class="app" href="https://github.com/hamzamehmood46/claims-portal-angular"><img loading="lazy" alt="Claims Portal screenshot" src="https://raw.githubusercontent.com/hamzamehmood46/claims-portal-angular/main/docs/claims.jpg"><div><b>Claims Portal</b><span>Angular front end for the Claims API: JWT login, guards, role-based workflow.</span></div></a>
+      <a class="app" href="https://github.com/hamzamehmood46/employee-directory-angular-dotnet"><img loading="lazy" alt="Employee Directory screenshot" src="https://raw.githubusercontent.com/hamzamehmood46/employee-directory-angular-dotnet/main/docs/overview.jpg"><div><b>Employee Directory</b><span>Angular + minimal APIs with live async validation and server-side paging.</span></div></a>
+      <a class="app" href="https://github.com/hamzamehmood46/inventory-manager-angular-dotnet"><img loading="lazy" alt="Inventory Manager screenshot" src="https://raw.githubusercontent.com/hamzamehmood46/inventory-manager-angular-dotnet/main/docs/products.jpg"><div><b>Inventory Manager</b><span>Full-stack CRUD with search, sorting, paging and stock adjustments.</span></div></a>
+    </div>
+  </section>
+
+  <section id="notes" class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="mono">Field notes</span><h2>Found by <em class="hl">tests.</em></h2></div>
+      <p>Real bugs that surfaced while building these projects, and what each one taught me.</p>
+    </div>
+    <div class="notes reveal">
+      <div class="note"><span class="mono">SQLite · EF Core</span><h4>The timestamp with no timezone.</h4><p>SQLite drops <code>DateTimeKind</code>, so dates came back without a <code>Z</code> and browsers read UTC as local time. A value converter fixed it, and a test on the raw JSON keeps it fixed.</p></div>
+      <div class="note"><span class="mono">ASP.NET Core · records</span><h4>Validation that silently didn't run.</h4><p><code>[Required]</code> on a positional record lands on the constructor parameter, but minimal APIs validate properties. Blank names sailed through until <code>[property: Required]</code>.</p></div>
+      <div class="note"><span class="mono">Concurrency</span><h4>Ten withdrawals, balance for five.</h4><p>Optimistic concurrency with reload-and-retry means the rules always run against the latest state. Exactly five win, and the balance never goes negative.</p></div>
+      <div class="note"><span class="mono">SQL</span><h4>Measure, then change.</h4><p>Tuning is only real if results stay identical. Each optimization in the SQL lab is asserted against the original query's output and plan.</p></div>
+    </div>
+  </section>
+
+  <section id="path" class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="mono">The path so far</span><h2>Learning by <em class="hl">shipping.</em></h2></div>
+      <p>From enterprise .NET to research on how AI systems get evaluated.</p>
+    </div>
+    <ol class="path reveal">
+      <li><span class="when">Aug 2026 – now</span><div><b>Volunteer Research Assistant · Texas Tech University</b><span>Building LLM-as-a-judge methods that score generated output against rubrics.</span></div></li>
+      <li><span class="when">Feb – Aug 2026</span><div><b>Graduate Assistant · TTU Online</b><span>Shipped a production chatbot on a vector database (under 3 s, 30% lower API cost) and messaging and monitoring agents.</span></div></li>
+      <li><span class="when">May 2024 – Jul 2025</span><div><b>Consultant .NET · Systems Limited (PartnerLinQ)</b><span>Azure integration platform, production support, Terraform and Azure DevOps.</span></div></li>
+      <li><span class="when">Jun 2022 – Apr 2024</span><div><b>Software Engineer · NETSOL Technologies</b><span>Enterprise lease and finance platform for three clients.</span></div></li>
+      <li><span class="when">Oct 2021 – Apr 2022</span><div><b>.NET Core Developer · Hawk Logix</b><span>80+ REST endpoints for a US medical billing platform.</span></div></li>
+      <li><span class="when">2017 – 2026</span><div><b>M.S. Computer Science, Texas Tech · B.S. Software Engineering, National Textile University</b><span>Advanced databases, algorithms, software verification and project management.</span></div></li>
+    </ol>
+  </section>
+
+  <section class="wrap" id="contact">
+    <div class="contact reveal">
+      <span class="mono">A role, a question, a hard problem?</span>
+      <h2>Let's <em class="hl">talk.</em></h2>
+      <div class="cta">
+        <a class="btn lime" href="mailto:hamza.mehmood46@gmail.com">hamza.mehmood46@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/hamzamehmood46">LinkedIn</a>
+        <a class="btn" href="https://github.com/hamzamehmood46">GitHub</a>
+        <a class="btn" href="assets/Hamza_Mehmood_Resume.pdf" download>Résumé ↓</a>
       </div>
     </div>
+  </section>
+</main>
 
-    <section id="projects">
-      <div class="wrap">
-        <h2>Projects</h2>
-        <p class="section-intro">
-          Public reference implementations of patterns I use in production. Each has a README, automated tests
-          and CI. None contains code from any employer.
-        </p>
-        <div class="projects">
-          <a class="card" href="https://github.com/hamzamehmood46/orderflow-dotnet">
-            <h3>OrderFlow</h3>
-            <p>Event-driven order processing with idempotent APIs, exponential-backoff retries and dead-letter handling.</p>
-            <ul class="tags"><li>ASP.NET Core</li><li>EF Core</li><li>Messaging</li></ul>
-            <div class="proof">16 tests, including concurrent duplicate requests</div>
-          </a>
-          <a class="card" href="https://github.com/hamzamehmood46/outbox-pattern-dotnet">
-            <h3>Transactional Outbox</h3>
-            <p>Update the database and publish an event without ever doing one but not the other, plus an idempotent inbox.</p>
-            <ul class="tags"><li>EF Core</li><li>Reliability</li><li>Concurrency</li></ul>
-            <div class="proof">12 tests: crash recovery, competing dispatchers</div>
-          </a>
-          <a class="card" href="https://github.com/hamzamehmood46/claims-api-dotnet">
-            <h3>Claims API</h3>
-            <p>Medical-billing REST API on Clean Architecture with JWT auth, role-based workflow and a strict claim state machine.</p>
-            <ul class="tags"><li>Clean Architecture</li><li>JWT</li><li>Swagger</li></ul>
-            <div class="proof">20 tests across domain rules and roles</div>
-          </a>
-          <a class="card" href="https://github.com/hamzamehmood46/event-sourced-ledger-dotnet">
-            <h3>Event-Sourced Ledger</h3>
-            <p>A bank ledger where every change is an immutable event, with optimistic concurrency and a rebuildable CQRS read model.</p>
-            <ul class="tags"><li>Event sourcing</li><li>CQRS</li><li>ADO.NET</li></ul>
-            <div class="proof">Parallel withdrawals can never overdraw</div>
-          </a>
-          <a class="card" href="https://github.com/hamzamehmood46/sql-performance-lab-dotnet">
-            <h3>SQL Performance Lab</h3>
-            <p>Before-and-after query tuning on 200k rows, verified by identical results and by reading the query plan.</p>
-            <ul class="tags"><li>SQL</li><li>Indexing</li><li>Query plans</li></ul>
-            <div class="proof">Includes a case where the clever rewrite was slower</div>
-          </a>
-          <a class="card" href="https://github.com/hamzamehmood46/xml-mapping-service-dotnet">
-            <h3>XML Mapping Service</h3>
-            <p>Validate partner XML against an XSD, transform with sandboxed XSLT, and validate the output, with XXE protection.</p>
-            <ul class="tags"><li>XSD</li><li>XSLT</li><li>Security</li></ul>
-            <div class="proof">Blocks external-entity attacks; catches broken mappings</div>
-          </a>
-          <a class="card" href="https://github.com/hamzamehmood46/resilience-toolkit-dotnet">
-            <h3>Resilience Toolkit</h3>
-            <p>Retry with jittered backoff, circuit breaker, timeout and bulkhead, composable into one pipeline.</p>
-            <ul class="tags"><li>Polly-style</li><li>Circuit breaker</li><li>Retry</li></ul>
-            <div class="proof">23 tests on a fake clock, no sleeping</div>
-          </a>
-          <a class="card" href="https://github.com/hamzamehmood46/api-rate-limiter-dotnet">
-            <h3>API Rate Limiter</h3>
-            <p>Token-bucket and sliding-window limiters with ASP.NET Core middleware and standard RateLimit headers.</p>
-            <ul class="tags"><li>Middleware</li><li>Thread safety</li><li>HTTP</li></ul>
-            <div class="proof">1,000 concurrent callers never exceed the limit</div>
-          </a>
-        </div>
-      </div>
-    </section>
+<div class="wrap"><footer><span>© 2026 Hamza Mehmood · Vienna, VA</span><span>Hand-built with HTML, CSS and a little JavaScript.</span></footer></div>
 
-    <section id="experience">
-      <div class="wrap">
-        <h2>Experience</h2>
-        <ol class="timeline">
-          <li class="job">
-            <div class="when">Aug 2026 &ndash; Present</div>
-            <div>
-              <h3>Volunteer Research Assistant</h3>
-              <p class="org">Texas Tech University, Computer Science</p>
-              <ul>
-                <li>Research on lecture and feedback evaluation, comparing single-prompt and multi-agent approaches.</li>
-                <li>Built LLM-as-a-judge evaluation methods and reproducible experiment pipelines in Python.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="job">
-            <div class="when">Feb 2026 &ndash; Aug 2026</div>
-            <div>
-              <h3>Graduate Assistant, Business Technology Support</h3>
-              <p class="org">Texas Tech University Online</p>
-              <ul>
-                <li>Shipped a production chatbot on a vector database: responses under 3 seconds, API cost down 30%.</li>
-                <li>Built a Python migration pipeline across 40 school districts, cutting manual effort by 60%.</li>
-                <li>Built automation agents for messaging and content monitoring.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="job">
-            <div class="when">May 2024 &ndash; Jul 2025</div>
-            <div>
-              <h3>Consultant .NET</h3>
-              <p class="org">Systems Limited (PartnerLinQ), Lahore</p>
-              <ul>
-                <li>Primary production responder for a platform integrating four downstream systems; recurring failures down 30%.</li>
-                <li>Designed event-driven services on Azure Functions, Logic Apps, API Management and Service Bus with retry, idempotency and dead-letter handling.</li>
-                <li>Managed environments with Terraform, Docker and Azure DevOps; implemented OAuth 2.0 and Key Vault secrets.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="job">
-            <div class="when">Jun 2022 &ndash; Apr 2024</div>
-            <div>
-              <h3>Software Engineer</h3>
-              <p class="org">NETSOL Technologies, Lahore</p>
-              <ul>
-                <li>Delivered 10+ modules on an enterprise lease and finance platform serving three clients.</li>
-                <li>Cut a reporting module from 180s to 32s by redesigning stored procedures and adding indexed views.</li>
-                <li>Led code reviews and mentoring; production defects fell 91% with sprint delivery held at 94%.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="job">
-            <div class="when">Oct 2021 &ndash; Apr 2022</div>
-            <div>
-              <h3>.NET Core Developer</h3>
-              <p class="org">Hawk Logix, Lahore</p>
-              <ul>
-                <li>Built 80+ REST endpoints in Clean Architecture for a US medical-billing platform processing about 30K records a month, documented in Swagger/OpenAPI.</li>
-              </ul>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+<script>
+(function(){
+  // reveal on scroll
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}); }
 
-    <section id="skills">
-      <div class="wrap">
-        <h2>Skills</h2>
-        <div class="skills">
-          <div class="skill-group"><h3>Backend</h3><ul class="tags"><li>C#</li><li>.NET 8</li><li>ASP.NET Core</li><li>Web API</li><li>EF Core</li><li>ADO.NET</li><li>Microservices</li><li>WCF</li></ul></div>
-          <div class="skill-group"><h3>Cloud &amp; DevOps</h3><ul class="tags"><li>Azure Functions</li><li>Service Bus</li><li>API Management</li><li>Key Vault</li><li>Docker</li><li>Terraform</li><li>Azure DevOps</li><li>GitHub Actions</li></ul></div>
-          <div class="skill-group"><h3>Data</h3><ul class="tags"><li>SQL Server</li><li>PostgreSQL</li><li>Oracle PL/SQL</li><li>Cosmos DB</li><li>Query tuning</li></ul></div>
-          <div class="skill-group"><h3>Frontend &amp; Other</h3><ul class="tags"><li>Angular</li><li>TypeScript</li><li>WPF / MVVM</li><li>Python</li><li>xUnit</li><li>LLM integration</li></ul></div>
-        </div>
-      </div>
-    </section>
+  // resilience playground
+  var box=document.getElementById('labbox'), lane=document.getElementById('lane'), dep=document.getElementById('dep');
+  var stateEl=document.getElementById('state'), stateText=document.getElementById('stateText');
+  var rate=document.getElementById('rate'), rateOut=document.getElementById('rateOut'), logEl=document.getElementById('log');
+  var stats={ok:0,retry:0,shed:0,fail:0};
+  var THRESHOLD=4, COOLDOWN=3500, MAX_TRIES=3, BASE=160;
+  var mode='closed', fails=0, openUntil=0, probing=false, nextId=1, tick=null;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    <section id="education">
-      <div class="wrap edu">
-        <h2>Education</h2>
-        <p><strong>M.S., Computer &amp; Information Sciences</strong>, Texas Tech University (August 2026)</p>
-        <p><strong>B.Sc., Software Engineering</strong>, National Textile University</p>
-      </div>
-    </section>
+  function log(text,cls){
+    var li=document.createElement('li'); li.className=cls||''; li.textContent=text;
+    if(logEl.firstChild && logEl.firstChild.className==='d' && /Press/.test(logEl.firstChild.textContent)) logEl.innerHTML='';
+    logEl.appendChild(li); while(logEl.children.length>7) logEl.removeChild(logEl.firstChild);
+  }
+  function paint(){
+    document.getElementById('sOk').textContent=stats.ok; document.getElementById('sRetry').textContent=stats.retry;
+    document.getElementById('sShed').textContent=stats.shed; document.getElementById('sFail').textContent=stats.fail;
+    box.dataset.s=mode; stateEl.dataset.s=mode;
+    var t={closed:'Breaker closed · healthy',open:'Breaker OPEN · failing fast',half:'Breaker half-open · sending one probe'}[mode];
+    if(mode==='open'){var s=Math.max(0,Math.ceil((openUntil-Date.now())/100)/10); t+=' · retry probe in '+s.toFixed(1)+'s';}
+    stateText.textContent=t; dep.classList.toggle('sick',+rate.value>=60);
+  }
+  function setMode(m){mode=m;paint();}
+  function openBreaker(){
+    mode='open'; openUntil=Date.now()+COOLDOWN; probing=false; paint(); log('Breaker OPEN: too many failures. Calls stop for '+(COOLDOWN/1000)+'s.','r');
+    clearInterval(tick); tick=setInterval(function(){ if(mode==='open'){ if(Date.now()>=openUntil){ mode='half'; log('Cooldown over: breaker half-open, next request is a probe.','y'); } paint(); } else if(mode!=='half'){ clearInterval(tick);} },100);
+  }
+  function packet(){
+    var p=document.createElement('span'); p.className='pkt'; p.style.top=(30+Math.random()*40)+'%'; lane.appendChild(p); return p;
+  }
+  function move(p,left,cls,ms){ if(reduce){p.style.left=left;if(cls)p.className='pkt '+cls;return;} requestAnimationFrame(function(){p.style.left=left; if(cls)p.className='pkt '+cls;}); }
+  function end(p){ setTimeout(function(){p.style.opacity='0';setTimeout(function(){p.remove()},520)},350); }
 
-    <section id="contact" class="contact">
-      <div class="wrap">
-        <h2>Let&rsquo;s talk</h2>
-        <p class="section-intro" style="margin-inline:auto">
-          I&rsquo;m looking for .NET and backend engineering roles in the DMV area or remote across the US.
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="mailto:hamza.mehmood46@gmail.com">Email me</a>
-          <a class="btn" href="https://www.linkedin.com/in/hamzamehmood46">LinkedIn</a>
-          <a class="btn" href="https://github.com/hamzamehmood46">GitHub</a>
-        </div>
-      </div>
-    </section>
-  </main>
+  function attempt(id,n,p){
+    var now=Date.now();
+    if(mode==='open' && now<openUntil || (mode==='half' && probing)){
+      stats.shed++; move(p,'44%','shed'); paint(); log('#'+id+' shed by breaker in 0 ms, dependency untouched.','y'); end(p); return;
+    }
+    if(mode==='open' && now>=openUntil){ mode='half'; }
+    var isProbe=(mode==='half'); if(isProbe){probing=true; log('#'+id+' is the half-open probe.','y');}
+    move(p,'82%'); paint();
+    var bad=Math.random()*100<+rate.value, latency=bad?520:170;
+    setTimeout(function(){
+      if(!bad){
+        fails=0; if(isProbe){probing=false; setMode('closed'); log('Probe succeeded: breaker closed, traffic resumes.','g');}
+        stats.ok++; move(p,'46%','ok'); paint(); log('#'+id+' served'+(n>1?' on attempt '+n:'')+' in '+(n>1?'~':'')+latency+' ms.','g'); end(p); return;
+      }
+      fails++; move(p,'46%','bad');
+      if(isProbe){ log('#'+id+' probe failed: back to open.','r'); openBreaker(); stats.fail++; paint(); end(p); return; }
+      if(fails>=THRESHOLD && mode==='closed'){ openBreaker(); }
+      if(n<MAX_TRIES && mode!=='open'){
+        stats.retry++; var wait=Math.round(BASE*Math.pow(2,n-1)*(0.6+Math.random()*0.8));
+        paint(); log('#'+id+' failed (timeout). Retry '+(n+1)+'/'+MAX_TRIES+' in '+wait+' ms (backoff + jitter).','r');
+        setTimeout(function(){ move(p,'14%','',0); setTimeout(function(){ p.className='pkt'; attempt(id,n+1,p); },reduce?0:220); },wait);
+      } else {
+        stats.fail++; paint(); log('#'+id+' gave up'+(mode==='open'?' (breaker open).':' after '+n+' tries.'),'r'); end(p);
+      }
+    },latency+(reduce?0:380));
+  }
+  function sendOne(){ var id=nextId++; var p=packet(); setTimeout(function(){ move(p,'46%'); setTimeout(function(){ attempt(id,1,p); },reduce?0:400); },30); }
+  function burst(){ for(var i=0;i<10;i++){ (function(i){ setTimeout(sendOne,i*230); })(i); } }
 
-  <footer><div class="wrap">&copy; 2026 Hamza Mehmood</div></footer>
+  rate.addEventListener('input',function(){rateOut.textContent=rate.value+'%';paint();});
+  document.getElementById('send').addEventListener('click',burst);
+  document.getElementById('down').addEventListener('click',function(){rate.value=100;rateOut.textContent='100%';paint();log('Dependency is down (100% failures).','r');});
+  document.getElementById('heal').addEventListener('click',function(){rate.value=0;rateOut.textContent='0%';paint();log('Dependency healed (0% failures). The breaker will notice on its next probe.','g');});
+  paint();
+})();
+</script>
 </body>
 </html>
-
-
