@@ -282,7 +282,7 @@ footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;display:flex;flex-
       <div class="num"><b>180s → 32s</b><span>A reporting module, after profiling execution plans</span></div>
       <div class="num"><b>91%</b><span>Fewer production defects on a three-client platform</span></div>
       <div class="num"><b>30–40</b><span>Production incidents a month I owned across four systems</span></div>
-      <div class="num"><b>130+</b><span>Automated tests across 8 reference projects, all in CI</span></div>
+      <div class="num"><b>220+</b><span>Automated tests across 12 public projects, all in CI</span></div>
     </div>
   </div>
 
@@ -330,6 +330,8 @@ footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;display:flex;flex-
             <dt>Idempotency</dt><dd>Eight concurrent duplicate requests create exactly one order.</dd>
             <dt>Concurrency</dt><dd>Ten parallel withdrawals against a balance that covers five: exactly five succeed, and the balance never goes negative.</dd>
             <dt>Delivery</dt><dd>A transactional outbox with competing dispatchers and an idempotent inbox, so events survive a crash and never run twice.</dd>
+            <dt>Architecture</dt><dd>One checkout system built as a modular monolith and as four .NET services. The same scenario suite passes against both, and a test fails the build if a module reaches into another module's code.</dd>
+            <dt>Live demos</dt><dd>An <a href="https://hamzamehmood46.github.io/coffee-shop-rush/">animated cafe</a> that shows why systems write orders down first, and an <a href="https://hamzamehmood46.github.io/ab-test-analyzer/">A/B test analyzer</a> that shows why peeking at results gives false wins.</dd>
           </dl>
         </details>
       </article>
