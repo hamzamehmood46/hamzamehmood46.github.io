@@ -9,6 +9,8 @@
 <meta property="og:title" content="Hamza Mehmood | .NET Software Engineer">
 <meta property="og:description" content="Software that keeps working when things go wrong. C#, ASP.NET Core, Azure.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://hamzamehmood46.github.io/assets/hamza.jpg">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316161d'/%3E%3Cpath d='M18 46V18h6v11h16V18h6v28h-6V35H24v11z' fill='%23e6f26b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +56,16 @@ nav ul a:hover{color:var(--ink)}
 .btn.primary{background:var(--ink);color:var(--paper)}
 .btn.lime{background:var(--lime);color:#16161d;border-color:#16161d}
 .btn:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
-@media (max-width:760px){nav ul{display:none}}
+nav ul a{padding:6px 0;border-bottom:2px solid transparent;transition:border-color .15s,color .15s}
+nav ul a.active{color:var(--ink);border-bottom-color:var(--violet)}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:10px;z-index:50;text-decoration:none;font-weight:600}
+.skip:focus{top:10px}
+@media (max-width:760px){
+  nav{flex-wrap:wrap;height:auto;padding:10px 0 6px;row-gap:6px}
+  nav ul{order:3;width:100%;overflow-x:auto;gap:20px;padding-bottom:6px;scrollbar-width:none;white-space:nowrap}
+  nav ul::-webkit-scrollbar{display:none}
+  nav .btn{padding:.5rem .9rem;font-size:.85rem}
+}
 
 /* hero */
 .wrap.hero{padding-top:88px;padding-bottom:56px}
@@ -66,12 +77,25 @@ h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,8.6vw,7.4rem);l
 .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
 .lede{font-size:1.2rem;color:var(--ink-2);max-width:46ch;margin:0 0 26px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
+.portrait{position:relative;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:var(--card-ink);box-shadow:0 30px 60px -30px rgba(22,22,29,.45)}
+.portrait img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 20%}
+.portrait .idcard{border:0;border-radius:0;background:var(--card-ink);color:var(--card-ink-text)}
+.portrait .idcard span{color:rgba(243,239,230,.7)}
+.portrait .idcard .stack span{border-color:rgba(243,239,230,.25);color:rgba(243,239,230,.85)}
+.portrait .badge{position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(22,22,29,.78);color:#f3efe6;backdrop-filter:blur(6px);border-radius:999px;padding:.35rem .8rem;font-size:.8rem}
+.portrait .badge i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
 .idcard{border:1px solid var(--line);border-radius:18px;padding:20px;background:color-mix(in srgb,var(--paper-2) 60%,transparent)}
 .idcard b{display:block;font-size:1.05rem}
 .idcard span{color:var(--muted);font-size:.92rem}
 .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .stack span{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);border-radius:6px;padding:.2rem .5rem;color:var(--ink-2)}
-@media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:28px}.wrap.hero{padding-top:56px}}
+.wrap.hero{display:grid;grid-template-columns:minmax(0,1fr) 340px;column-gap:56px;align-items:start}
+.wrap.hero .meta{grid-column:1/-1}
+.wrap.hero h1{grid-column:1;font-size:clamp(3rem,7vw,5.9rem);max-width:12ch}
+.wrap.hero{grid-template-rows:auto auto 1fr}
+.hero-grid{grid-column:1;display:block;align-self:start}
+.portrait{grid-column:2;grid-row:2/4;align-self:start;margin-top:6px}
+@media (max-width:860px){.wrap.hero{grid-template-columns:1fr;grid-template-rows:none;padding-top:40px}.portrait{grid-column:1;grid-row:auto;max-width:380px;margin-top:32px}}
 
 /* sections */
 section.wrap{padding-top:72px;padding-bottom:72px}
@@ -162,10 +186,11 @@ details .inside dd{margin:2px 0 0}
 .apps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
 .app{border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;background:color-mix(in srgb,var(--paper-2) 50%,transparent);transition:transform .2s,box-shadow .2s;display:block}
 .app:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(22,22,29,.35)}
-.app img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;background:var(--paper-2);border-bottom:1px solid var(--line)}
+.app img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;background:var(--paper-2);border-bottom:1px solid var(--line)}
 .app div{padding:16px 18px 18px}
 .app b{display:block;font-size:1.05rem}
 .app span{color:var(--ink-2);font-size:.92rem}
+.livetag{font-family:var(--mono);font-size:.62rem;font-weight:500;letter-spacing:.06em;vertical-align:middle;margin-left:6px;padding:.12rem .4rem;border-radius:5px;background:var(--lime);color:#16161d}
 @media (max-width:860px){.apps{grid-template-columns:1fr}}
 
 /* notes */
@@ -204,6 +229,7 @@ footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;display:flex;flex-
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 <header>
   <div class="wrap">
     <nav aria-label="Main">
@@ -214,6 +240,7 @@ footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;display:flex;flex-
         <li><a href="#proof">Proof</a></li>
         <li><a href="#notes">Field notes</a></li>
         <li><a href="#path">Path</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <a class="btn primary" href="assets/Hamza_Mehmood_Resume.pdf" download>Résumé ↓</a>
     </nav>
@@ -231,17 +258,22 @@ footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;display:flex;flex-
       <div>
         <p class="lede">I build .NET backends: event-driven services, fast SQL, and APIs that are tested until they're boring. Four years across enterprise fintech, healthcare billing and Azure integration platforms.</p>
         <div class="cta">
+          <a class="btn primary" href="mailto:hamza.mehmood46@gmail.com">Email me</a>
           <a class="btn lime" href="#lab">Try to break something ↓</a>
           <a class="btn" href="https://github.com/hamzamehmood46">GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/hamzamehmood46">LinkedIn</a>
         </div>
       </div>
-      <aside class="idcard" aria-label="Snapshot">
-        <b>M.S. Computer Science</b>
-        <span>Texas Tech University · 2026</span>
-        <div class="stack" aria-label="Main technologies"><span>C#</span><span>ASP.NET Core</span><span>EF Core</span><span>Azure</span><span>SQL Server</span><span>Angular</span></div>
-      </aside>
     </div>
+      <aside class="portrait" aria-label="Hamza Mehmood">
+        <img src="assets/hamza.jpg" width="640" height="640" alt="Portrait of Hamza Mehmood, .NET software engineer">
+        <span class="badge"><i></i>Open to work</span>
+        <div class="idcard">
+          <b>Hamza Mehmood</b>
+          <span>M.S. Computer Science, Texas Tech · 2026</span>
+          <div class="stack" aria-label="Main technologies"><span>C#</span><span>ASP.NET Core</span><span>EF Core</span><span>Azure</span><span>SQL Server</span><span>Angular</span></div>
+        </div>
+      </aside>
   </div>
 
   <hr class="rule">
@@ -343,6 +375,11 @@ footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;display:flex;flex-
       <div><span class="mono">Proof, in code</span><h2>Read the <em class="hl">source.</em></h2></div>
       <p>Every project has a README, automated tests and CI. None contains employer code.</p>
     </div>
+    <div class="apps live reveal" style="margin:0 0 40px">
+      <a class="app" href="https://hamzamehmood46.github.io/coffee-shop-rush/"><img loading="lazy" width="1280" height="800" alt="Coffee Shop Rush: animated cafe scene" src="assets/demo-coffee.jpg"><div><b>Coffee Shop Rush <small class="livetag">LIVE</small></b><span>Crash the barista and see why real systems write orders down first. No jargon.</span></div></a>
+      <a class="app" href="https://hamzamehmood46.github.io/ab-test-analyzer/"><img loading="lazy" width="1280" height="800" alt="A/B Test Analyzer calculator" src="assets/demo-abtest.jpg"><div><b>A/B Test Analyzer <small class="livetag">LIVE</small></b><span>Did the variant really win? Significance, sample size and why peeking misleads.</span></div></a>
+      <a class="app" href="https://hamzamehmood46.github.io/saas-product-analytics-sql/"><img loading="lazy" width="1280" height="800" alt="SaaS product analytics report" src="assets/demo-sql.jpg"><div><b>SaaS Analytics in SQL <small class="livetag">LIVE</small></b><span>Funnel, retention and channel quality in plain SQL, with the query behind every number.</span></div></a>
+    </div>
     <div class="proof reveal">
       <a class="row" href="https://hamzamehmood46.github.io/coffee-shop-rush/"><b>Coffee Shop Rush</b><span>Live animated demo: crash the barista and see why real systems write orders down first. Blazor WebAssembly.</span><em class="n">23 tests</em><em class="go">↗</em></a>
       <a class="row" href="https://github.com/hamzamehmood46/monolith-vs-microservices-dotnet"><b>Monolith vs Microservices</b><span>One checkout system deployed as a modular monolith and as four .NET services; one scenario suite proves both behave the same.</span><em class="n">34 tests</em><em class="go">↗</em></a>
@@ -416,6 +453,16 @@ footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;display:flex;flex-
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
     els.forEach(function(el){io.observe(el)});
   } else { els.forEach(function(el){el.classList.add('in')}); }
+
+  // highlight the nav link of the section in view
+  var links={};
+  document.querySelectorAll('nav ul a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.toggle('active',k===e.target.id);});}
+    });},{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(links).forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s);});
+  }
 
   // resilience playground
   var box=document.getElementById('labbox'), lane=document.getElementById('lane'), dep=document.getElementById('dep');
