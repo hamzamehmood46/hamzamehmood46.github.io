@@ -193,7 +193,7 @@ details .inside a{color:var(--cyan)}
 @media (max-width:980px){.cards,.cases{grid-template-columns:1fr}.card{min-height:200px}}
 
 /* bosses */
-.bosses{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:34px}
+.bosses{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:34px}
 .boss{display:flex;flex-direction:column;text-decoration:none;transition:transform .18s}
 .boss:hover{transform:translateY(-5px)}
 .boss img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line);background:var(--bg2)}
@@ -338,7 +338,7 @@ footer{padding:36px 0 56px;color:var(--mut);font-size:.9rem;display:flex;flex-wr
       <div class="num panel"><small>Achievement unlocked</small><b>180s → 32s</b><span>A reporting module, after profiling execution plans</span></div>
       <div class="num panel"><small>Achievement unlocked</small><b>91%</b><span>Fewer production defects on a three-client platform</span></div>
       <div class="num panel"><small>Achievement unlocked</small><b>30–40</b><span>Production incidents a month I owned across four systems</span></div>
-      <div class="num panel"><small>Achievement unlocked</small><b>220+</b><span>Automated tests across 12 public projects, all in CI</span></div>
+      <div class="num panel"><small>Achievement unlocked</small><b>280+</b><span>Automated tests across 13 public projects, all in CI</span></div>
     </div>
   </div>
 
@@ -434,11 +434,13 @@ footer{padding:36px 0 56px;color:var(--mut);font-size:.9rem;display:flex;flex-wr
       <p>Every project has a README, automated tests and CI. None contains employer code. The health bar is the test suite, and it is full.</p>
     </div>
     <div class="bosses reveal">
+      <a class="boss panel" href="https://hamzamehmood46.github.io/point-of-sale-dotnet/"><img loading="lazy" width="1280" height="800" alt="Till point of sale register screen" src="assets/demo-pos.jpg"><div class="body"><span class="lbl">Boss · The Double Count</span><b>Till: Offline POS</b><span class="d">Sell offline, sync later, and every sale lands exactly once. Refunds and drawer balancing too.</span><div class="hp"><span>HP</span><i></i><span>61 tests</span></div><span class="fight">Fight it live →</span></div></a>
       <a class="boss panel" href="https://hamzamehmood46.github.io/coffee-shop-rush/"><img loading="lazy" width="1280" height="800" alt="Coffee Shop Rush: animated cafe scene" src="assets/demo-coffee.jpg"><div class="body"><span class="lbl">Boss · The Lost Order</span><b>Coffee Shop Rush</b><span class="d">Crash the barista and see why real systems write orders down first. No jargon.</span><div class="hp"><span>HP</span><i></i><span>23 tests</span></div><span class="fight">Fight it live →</span></div></a>
       <a class="boss panel" href="https://hamzamehmood46.github.io/ab-test-analyzer/"><img loading="lazy" width="1280" height="800" alt="A/B Test Analyzer calculator" src="assets/demo-abtest.jpg"><div class="body"><span class="lbl">Boss · The False Winner</span><b>A/B Test Analyzer</b><span class="d">Did the variant really win? Significance, sample size and why peeking misleads.</span><div class="hp"><span>HP</span><i></i><span>24 tests</span></div><span class="fight">Fight it live →</span></div></a>
       <a class="boss panel" href="https://hamzamehmood46.github.io/saas-product-analytics-sql/"><img loading="lazy" width="1280" height="800" alt="SaaS product analytics report" src="assets/demo-sql.jpg"><div class="body"><span class="lbl">Boss · The Silent Drop-off</span><b>SaaS Analytics in SQL</b><span class="d">Funnel, retention and channel quality in plain SQL, with the query behind every number.</span><div class="hp"><span>HP</span><i></i><span>10 tests</span></div><span class="fight">Fight it live →</span></div></a>
     </div>
     <div class="proof reveal">
+      <a class="row" href="https://github.com/hamzamehmood46/point-of-sale-dotnet"><b>Till: Point of Sale</b><span>Offline-first register in C#: split payments, discounts, refunds, shift reports, and exactly-once sync after an outage.</span><em class="n">61 tests</em><em class="go">↗</em></a>
       <a class="row" href="https://github.com/hamzamehmood46/monolith-vs-microservices-dotnet"><b>Monolith vs Microservices</b><span>One checkout system deployed as a modular monolith and as four .NET services; one scenario suite proves both behave the same.</span><em class="n">34 tests</em><em class="go">↗</em></a>
       <a class="row" href="https://github.com/hamzamehmood46/orderflow-dotnet"><b>OrderFlow</b><span>Idempotent order API with retries, backoff and dead-letter handling.</span><em class="n">17 tests</em><em class="go">↗</em></a>
       <a class="row" href="https://github.com/hamzamehmood46/outbox-pattern-dotnet"><b>Transactional Outbox</b><span>Reliable event publishing with competing dispatchers and an idempotent inbox.</span><em class="n">12 tests</em><em class="go">↗</em></a>
