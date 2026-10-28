@@ -272,6 +272,14 @@ footer a{color:var(--txt2)}
   .avail i{animation:none}.pkt{transition:none}.btn,.card,.proj .shot img{transition:none}
 }
 
+/* cursor spotlight */
+.spot{position:fixed;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;pointer-events:none;z-index:1;opacity:0;transition:opacity .35s ease;mix-blend-mode:screen;
+  background:radial-gradient(circle,rgba(124,156,255,.16) 0,rgba(94,234,212,.07) 38%,transparent 68%);will-change:transform}
+.spot.on{opacity:1}
+.spot-ring{position:fixed;left:0;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;border:1.5px solid rgba(238,241,251,.55);border-radius:50%;pointer-events:none;z-index:70;opacity:0;transition:opacity .25s,width .2s,height .2s,margin .2s,background .2s,border-color .2s;will-change:transform}
+.spot-ring.on{opacity:1}
+.spot-ring.hot{width:50px;height:50px;margin:-25px 0 0 -25px;background:rgba(124,156,255,.14);border-color:var(--ac)}
+@media (hover:none),(pointer:coarse){.spot,.spot-ring{display:none}}
 /* motion (only when JS adds .anim and the visitor has not asked for reduced motion) */
 .aurora{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
 .aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.28;will-change:transform}
@@ -309,11 +317,12 @@ footer a{color:var(--txt2)}
 .anim .irow{animation:fade .5s ease both}
 .card .shot,.mini img{overflow:hidden}
 .irow .ilinks a{position:relative}
-@media (prefers-reduced-motion:reduce){.aurora{display:none}.marq div{animation:none}.pframe{transform:none!important}.w,.hero .avail,.hero .lede,.hero .cta,.portrait{opacity:1!important;animation:none!important;transform:none!important}}
+@media (prefers-reduced-motion:reduce){.spot,.spot-ring{display:none}.aurora{display:none}.marq div{animation:none}.pframe{transform:none!important}.w,.hero .avail,.hero .lede,.hero .cta,.portrait{opacity:1!important;animation:none!important;transform:none!important}}
 </style>
 </head>
 <body>
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="spot" id="spot" aria-hidden="true"></div><div class="spot-ring" id="ring" aria-hidden="true"></div>
 <a class="skip" href="#top">Skip to content</a>
 <header>
   <div class="prog" aria-hidden="true"><i id="pf"></i></div>
@@ -722,6 +731,19 @@ footer a{color:var(--txt2)}
 
     // portrait tilt and magnetic buttons (fine pointers only)
     if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+      // cursor spotlight: a soft glow that trails the pointer, plus a ring that grows over links
+      var spot=document.getElementById('spot'), ring=document.getElementById('ring'), mx=-999,my=-999,sx=mx,sy=my,raf=0;
+      function loop(){
+        sx+=(mx-sx)*.12; sy+=(my-sy)*.12;
+        spot.style.transform='translate('+sx+'px,'+sy+'px)'; ring.style.transform='translate('+mx+'px,'+my+'px)';
+        raf=(Math.abs(mx-sx)>.3||Math.abs(my-sy)>.3)?requestAnimationFrame(loop):0;
+      }
+      addEventListener('pointermove',function(e){
+        mx=e.clientX; my=e.clientY; spot.classList.add('on'); ring.classList.add('on');
+        ring.classList.toggle('hot',!!(e.target.closest&&e.target.closest('a,button,summary,input,.shot')));
+        if(!raf) raf=requestAnimationFrame(loop);
+      },{passive:true});
+      document.documentElement.addEventListener('pointerleave',function(){spot.classList.remove('on');ring.classList.remove('on');});
       var pf2=document.querySelector('.pframe'), por=document.querySelector('.portrait');
       por.addEventListener('pointermove',function(e){var r=por.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;pf2.style.setProperty('--ry',(x*9)+'deg');pf2.style.setProperty('--rx',(-y*9)+'deg');});
       por.addEventListener('pointerleave',function(){pf2.style.setProperty('--ry','0deg');pf2.style.setProperty('--rx','0deg');});
