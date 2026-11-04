@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#070912">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="Hamza Mehmood | .NET Software Engineer">
-<meta property="og:description" content="Software that keeps working when things go wrong. 24 public projects, 1,560+ automated tests. C#, ASP.NET Core, Azure.">
+<meta property="og:description" content="Software that keeps working when things go wrong. 26 public projects, 1,860+ automated tests. C#, ASP.NET Core, Azure.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://hamzamehmood46.github.io/assets/hamza.jpg">
 <meta name="twitter:card" content="summary">
@@ -318,6 +318,24 @@ footer a{color:var(--txt2)}
 .card .shot,.mini img{overflow:hidden}
 .irow .ilinks a{position:relative}
 @media (prefers-reduced-motion:reduce){.spot,.spot-ring{display:none}.aurora{display:none}.marq div{animation:none}.pframe{transform:none!important}.w,.hero .avail,.hero .lede,.hero .cta,.portrait{opacity:1!important;animation:none!important;transform:none!important}}
+
+/* ask-my-portfolio chat launcher */
+.askfab{position:fixed;right:20px;bottom:20px;z-index:80;display:inline-flex;align-items:center;gap:.55rem;padding:.8rem 1.2rem;border:0;border-radius:999px;background:linear-gradient(135deg,var(--ac),#9a7cff);color:#07091a;font:600 .95rem var(--sans);cursor:pointer;box-shadow:0 14px 40px -12px rgba(124,156,255,.8);transition:transform .15s}
+.askfab:hover{transform:translateY(-2px)}
+.askfab[aria-expanded="true"]{display:none}
+.askpanel{position:fixed;right:20px;bottom:20px;z-index:85;display:none;flex-direction:column;width:min(430px,calc(100vw - 24px));height:min(660px,calc(100dvh - 40px));background:var(--bg2);border:1px solid var(--line2);border-radius:20px;box-shadow:0 30px 80px -20px rgba(0,0,0,.85);overflow:hidden}
+.askpanel.open{display:flex;animation:askin .22s ease-out}
+.askhead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 10px 10px 16px;border-bottom:1px solid var(--line)}
+.askhead b{display:block;font-family:var(--serif);font-weight:400;font-size:1.25rem;line-height:1.15}
+.askhead small{display:block;color:var(--mut);font-size:.74rem;line-height:1.3}
+.askx{flex:none;width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line2);border-radius:50%;background:transparent;color:var(--txt2);font-size:1rem;cursor:pointer}
+.askx:hover{border-color:var(--ac);color:var(--txt)}
+.askbody{position:relative;flex:1;min-height:0}
+.askbody iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--bg)}
+.askload{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:var(--mut);font-size:.9rem}
+@keyframes askin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (max-width:600px){.askpanel{right:0;bottom:0;width:100vw;height:100dvh;border-radius:0;border:0}.askfab{right:14px;bottom:14px}}
+@media (prefers-reduced-motion:reduce){.askpanel.open{animation:none}.askfab{transition:none}}
 </style>
 </head>
 <body>
@@ -348,9 +366,10 @@ footer a{color:var(--txt2)}
     <div>
       <span class="avail"><i></i>Open to .NET &amp; backend roles · Vienna, VA or remote</span>
       <h1>Software that keeps working <em class="hl">when things go wrong.</em></h1>
-      <p class="lede">I'm a .NET engineer who builds integrations, payments-style workflows and APIs that are tested until they're boring. Four years across enterprise fintech, healthcare billing and Azure integration platforms, plus 24 public projects you can open and try right now.</p>
+      <p class="lede">I'm a .NET engineer who builds integrations, payments-style workflows and APIs that are tested until they're boring. Four years across enterprise fintech, healthcare billing and Azure integration platforms, plus 26 public projects you can open and try right now.</p>
       <div class="cta">
         <a class="btn primary" href="#work">See the work ↓</a>
+        <button class="btn teal" type="button" data-ask>Ask my portfolio</button>
         <a class="btn teal" href="mailto:hamza.mehmood46@gmail.com">Email me</a>
         <a class="btn" href="https://github.com/hamzamehmood46">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/hamzamehmood46">LinkedIn</a>
@@ -373,7 +392,7 @@ footer a{color:var(--txt2)}
       <div class="num"><b>180s → 32s</b><span>A reporting module, after profiling execution plans</span></div>
       <div class="num"><b>91%</b><span>Fewer production defects on a three-client platform</span></div>
       <div class="num"><b>30–40</b><span>Production incidents a month, owned across four systems</span></div>
-      <div class="num"><b>1,560+</b><span>Automated tests across 24 public projects, all in CI</span></div>
+      <div class="num"><b>1,860+</b><span>Automated tests across 26 public projects, all in CI</span></div>
     </div>
   </div>
 
@@ -551,7 +570,7 @@ footer a{color:var(--txt2)}
 
   <section id="projects" class="wrap">
     <div class="sec-head reveal">
-      <div><span class="eyebrow">Everything I've built</span><h2>All 24 <em class="hl">projects.</em></h2></div>
+      <div><span class="eyebrow">Everything I've built</span><h2>All 26 <em class="hl">projects.</em></h2></div>
       <p>Filter by theme or search. "Live" opens a working demo; "Source" opens the repo with its README and test suite.</p>
     </div>
     <div class="tools reveal">
@@ -566,8 +585,10 @@ footer a{color:var(--txt2)}
       <input class="search" id="q" type="search" placeholder="Search projects" aria-label="Search projects">
     </div>
     <ul class="index reveal" id="index">
+<li class="irow" data-k="architecture saas" data-s="ask my portfolio grounded chatbot that answers only from my project readmes, cites its sources and says i don't know when they don't cover a question. stand-in model."><div class="iname"><b>Ask My Portfolio</b><span>Chatbot that answers only from my project READMEs, cites its sources and says "I don't know" when they don't cover the question. Stand-in model, so nothing is sent anywhere.</span></div><span class="itests">91 tests</span><div class="ilinks"><a href="https://hamzamehmood46.github.io/portfolio-ask-dotnet/">Live</a><a href="https://github.com/hamzamehmood46/portfolio-ask-dotnet">Source</a></div></li>
+<li class="irow" data-k="integration" data-s="mapping assist ai field mapper for xml and edi-style data. it only suggests; a person approves each mapping. stand-in model."><div class="iname"><b>Mapping Assist</b><span>AI field mapper for XML and EDI-style data. It only suggests; a person approves each mapping, with fixed conversions and no model-written code. Stand-in model.</span></div><span class="itests">118 tests</span><div class="ilinks"><span class="muted">Code</span><a href="https://github.com/hamzamehmood46/mapping-assist-dotnet">Source</a></div></li>
 <li class="irow" data-k="integration saas" data-s="twilio messaging console texting console that follows carrier rules: message-part counting, delivery statuses and error codes, stop/start handling, quiet hours and a bulk preview. simulated carrier, so nothing is ever sent."><div class="iname"><b>Twilio Messaging Console</b><span>Texting console that follows carrier rules: message-part counting, delivery statuses and error codes, STOP/START handling, quiet hours and a bulk preview. Simulated carrier, so nothing is ever sent.</span></div><span class="itests">165 tests</span><div class="ilinks"><a href="https://hamzamehmood46.github.io/twilio-messaging-dotnet/">Live</a><a href="https://github.com/hamzamehmood46/twilio-messaging-dotnet">Source</a></div></li>
-<li class="irow" data-k="saas reliability" data-s="triage: support inbox help-desk engine with business-hours sla timers that pause while waiting on the customer, fair assignment by skill, merging, auto-close and escalation."><div class="iname"><b>Triage: Support Inbox</b><span>Help-desk engine with business-hours SLA timers that pause while waiting on the customer, fair assignment by skill, merging, auto-close and escalation.</span></div><span class="itests">237 tests</span><div class="ilinks"><a href="https://hamzamehmood46.github.io/support-inbox-dotnet/">Live</a><a href="https://github.com/hamzamehmood46/support-inbox-dotnet">Source</a></div></li>
+<li class="irow" data-k="saas reliability" data-s="triage: support inbox help-desk engine with business-hours sla timers that pause while waiting on the customer, fair assignment by skill, merging, auto-close and escalation, plus an ai copilot that only suggests and an mcp server."><div class="iname"><b>Triage: Support Inbox</b><span>Help-desk engine with business-hours SLA timers that pause while waiting on the customer, fair assignment by skill, merging, auto-close and escalation. Now with an AI copilot that only suggests and an MCP server for Claude.</span></div><span class="itests">329 tests</span><div class="ilinks"><a href="https://hamzamehmood46.github.io/support-inbox-dotnet/">Live</a><a href="https://github.com/hamzamehmood46/support-inbox-dotnet">Source</a></div></li>
 <li class="irow" data-k="saas reliability" data-s="flagpole: feature flags targeting rules, rollouts that never reshuffle users, variants, prerequisites and a client that keeps serving the last known flags during an outage."><div class="iname"><b>Flagpole: Feature Flags</b><span>Targeting rules, rollouts that never reshuffle users, variants, prerequisites and a client that keeps serving the last known flags during an outage.</span></div><span class="itests">125 tests</span><div class="ilinks"><a href="https://hamzamehmood46.github.io/feature-flags-dotnet/">Live</a><a href="https://github.com/hamzamehmood46/feature-flags-dotnet">Source</a></div></li>
 <li class="irow" data-k="saas" data-s="nudge: invoice reminders invoicing that gets paid: escalating reminders, once-only late fees, idempotent payments, an aging report and a cash forecast."><div class="iname"><b>Nudge: Invoice Reminders</b><span>Invoicing that gets paid: escalating reminders, once-only late fees, idempotent payments, an aging report and a cash forecast.</span></div><span class="itests">93 tests</span><div class="ilinks"><a href="https://hamzamehmood46.github.io/invoice-reminders-dotnet/">Live</a><a href="https://github.com/hamzamehmood46/invoice-reminders-dotnet">Source</a></div></li>
 <li class="irow" data-k="integration reliability" data-s="webhook relay receive webhooks, verify signatures, drop repeats, route to destinations, then retry, dead-letter, replay and trip a circuit breaker."><div class="iname"><b>Webhook Relay</b><span>Receive webhooks, verify signatures, drop repeats, route to destinations, then retry, dead-letter, replay and trip a circuit breaker.</span></div><span class="itests">252 tests</span><div class="ilinks"><a href="https://webhook-relay-dotnet.onrender.com/swagger">Live</a><a href="https://github.com/hamzamehmood46/webhook-relay-dotnet">Source</a></div></li>
@@ -641,6 +662,20 @@ footer a{color:var(--txt2)}
 </main>
 
 <div class="wrap"><footer><span>© 2026 Hamza Mehmood · Vienna, VA</span><span>Hand-built with HTML, CSS and a little JavaScript. Source on <a href="https://github.com/hamzamehmood46/hamzamehmood46.github.io">GitHub</a>.</span></footer></div>
+
+<button class="askfab" id="askfab" type="button" aria-expanded="false" aria-controls="askpanel">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 5h16v11H11l-5 4v-4H4z"/></svg>Ask my portfolio
+</button>
+<div class="askpanel" id="askpanel" role="dialog" aria-label="Ask my portfolio">
+  <div class="askhead">
+    <div><b>Ask my portfolio</b><small>Answers come from my project READMEs, with sources. Demo model, not a real LLM.</small></div>
+    <button class="askx" id="askx" type="button" aria-label="Close chat">&#x2715;</button>
+  </div>
+  <div class="askbody">
+    <p class="askload" id="askload" role="status">Loading the chat&hellip; the first load takes a few seconds.</p>
+    <iframe id="askframe" title="Ask my portfolio chatbot" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -820,6 +855,26 @@ footer a{color:var(--txt2)}
   document.getElementById('down').addEventListener('click',function(){rate.value=100;rateOut.textContent='100%';paint();log('Dependency is down (100% failures).','r');});
   document.getElementById('heal').addEventListener('click',function(){rate.value=0;rateOut.textContent='0%';paint();log('Dependency healed (0% failures). The breaker will notice on its next probe.','g');});
   paint();
+})();
+</script>
+<script>
+/* ask-my-portfolio chat: the demo loads in an iframe the first time it is opened, so it costs nothing until used */
+(function(){
+  var fab=document.getElementById('askfab'),panel=document.getElementById('askpanel'),x=document.getElementById('askx'),
+      frame=document.getElementById('askframe'),load=document.getElementById('askload');
+  var URL='https://hamzamehmood46.github.io/portfolio-ask-dotnet/?embed=1';
+  function open(){
+    if(!frame.getAttribute('src')){frame.setAttribute('src',URL);}
+    panel.classList.add('open');fab.setAttribute('aria-expanded','true');x.focus();
+  }
+  function close(){
+    panel.classList.remove('open');fab.setAttribute('aria-expanded','false');fab.focus();
+  }
+  fab.addEventListener('click',open);
+  x.addEventListener('click',close);
+  frame.addEventListener('load',function(){load.hidden=true;});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panel.classList.contains('open')){close();}});
+  [].forEach.call(document.querySelectorAll('[data-ask]'),function(el){el.addEventListener('click',function(e){e.preventDefault();open();});});
 })();
 </script>
 </body>
